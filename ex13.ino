@@ -13,15 +13,15 @@ int f; //風扇
 int w; //噴水
 int th = 25; //風扇自動開關溫度預設值
 char ss[3]; //土壤濕度文字格式
-char _lwifi_ssid[] = "lita";
-char _lwifi_pass[] = "0911027768";
+char _lwifi_ssid[] = "Ws";
+char _lwifi_pass[] = "0989787226";
 
-MCSDevice mcs("DXw243yd", "CfxiZLEs0UXcSie4");
+MCSDevice mcs("DAYgMDXC", "1b5iElzuvnkc9eqC");
 MCSDisplayInteger temp("temp"); //溫度
 MCSDisplayInteger humid("humid"); //濕度
 MCSDisplayInteger soil("soil"); //土壤濕度
-MCSControllerOnOff MySwitch("MySwitch"); //風扇手動開關
-MCSControllerOnOff MySwitch1("MySwitch1"); //噴水手動開關
+MCSControllerOnOff MySwitch("myswitch"); //風扇手動開關
+MCSControllerOnOff MySwitch1("myswitch1"); //噴水手動開關
 MCSControllerAnalog slider("slider"); //風扇自動開關溫度設定slider
 
 void setup()
@@ -42,10 +42,10 @@ void setup()
   
   Serial.println("Wi-Fi 開始連線");
   while (WiFi.begin(_lwifi_ssid, _lwifi_pass) != WL_CONNECTED) { delay(1000); }
-  Serial.println("Wi-Fi 連線成功");
+  Serial.println("Wi-Fi start ");
   while(!mcs.connected()) { mcs.connect(); }
-  Serial.println("MCS 連線成功");
- }
+  Serial.println("MCS start ");
+  }
 
 void loop()
 {
@@ -120,4 +120,3 @@ void loop()
   
   delay(1000);
 }
-© 2019 GitHub, Inc.
